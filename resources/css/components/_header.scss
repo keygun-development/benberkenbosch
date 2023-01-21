@@ -1,0 +1,13 @@
+.c-header {
+    @apply w-full bg-white h-[80px] p-4 shadow-lg flex items-center sticky top-0 z-10;
+
+    ul {
+        li {
+            @apply mr-4;
+
+            &.current-menu-item {
+                @apply border-b border-black;
+            }
+        }
+    }
+}

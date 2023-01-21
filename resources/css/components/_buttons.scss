@@ -1,0 +1,15 @@
+.c-button {
+    @apply px-5 py-2 font-bold rounded-full text-center duration-300;
+
+    &__white {
+        @apply text-black bg-white;
+
+        &:hover {
+            @apply bg-black text-white;
+        }
+    }
+
+    &__large {
+        @apply px-10 py-3;
+    }
+}
