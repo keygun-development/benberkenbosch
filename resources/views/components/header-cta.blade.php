@@ -1,24 +1,22 @@
 <div class="relative">
-    <img class="max-h-[calc(100vh-80px)] object-cover object-bottom aspect-video w-full absolute inset-0"
-         src="{{ asset('images/wallpaper.png') }}" alt="{{ asset('images/wallpaper.png') }}"/>
+    <img
+        class="max-h-[calc(100vh-80px)] min-h-[calc(100vh-80px)] object-cover object-bottom aspect-video w-full absolute inset-0
+        {{ \Carbon\Carbon::now()->format('d-m-Y') < $album->publish_date ? 'grayscale' : '' }}"
+        src="{{ asset($album->thumbnail) }}" alt="{{ asset($album->thumbnail) }}"/>
     <div class="absolute flex flex-col justify-center items-center w-full h-[calc(100vh-80px)]">
         <div class="text-white font-allroundermonument text-center">
-            <h2 class="text-2xl">
-                Ben Berkenbosch
+            <h2 class="lg:text-2xl md:text-xl text-lg">
+                {{ $album->author }}
             </h2>
-            <h1 class="text-9xl leading-relaxed">
-                The Odyssey
+            <h1 class="lg:text-9xl md:text-7xl text-4xl leading-relaxed">
+                {{ $album->name }}
             </h1>
-            <h3 class="text-2xl">
-                Out Now
+            <h3 class="lg:text-2xl md:text-xl text-lg">
+                {{ $date }}
             </h3>
+            {{ $platforms }}
         </div>
-        <div class="mt-8">
-            <a class="c-button c-button__white c-button__large text-2xl tracking-wider">
-                Listen Now!
-            </a>
-        </div>
-        <a class="absolute bottom-0 c-arrow__down">
+        <a href="#app" class="absolute bottom-0 c-arrow__down">
             <i class="fa-solid fa-chevron-down text-white opacity-30 text-3xl"></i>
         </a>
     </div>

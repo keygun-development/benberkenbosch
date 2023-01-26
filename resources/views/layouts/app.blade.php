@@ -9,11 +9,11 @@
 </head>
 <body>
 <div>
-    <div class="min-h-screen max-h-screen" id="header">
+    <div id="header">
         @include('partials.header')
         @yield('cta')
     </div>
-    <div class="h-screen" id="app">
+    <div id="app">
         @yield('content')
     </div>
     <div id="footer">

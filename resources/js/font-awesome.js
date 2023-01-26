@@ -3,11 +3,26 @@ import {library, dom} from '@fortawesome/fontawesome-svg-core';
 
 // import the needed icons here
 import {
-    faChevronDown
+    faChevronDown,
+    faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 
+import {
+    faYoutube,
+    faInstagram,
+    faSpotify,
+    faAmazon,
+    faDiscord
+} from "@fortawesome/free-brands-svg-icons";
+
 library.add(
-    faChevronDown
+    faChevronDown,
+    faYoutube,
+    faInstagram,
+    faSpotify,
+    faAmazon,
+    faDiscord,
+    faEnvelope
 );
 
 dom.watch();
