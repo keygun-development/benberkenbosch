@@ -40,9 +40,9 @@
                         <h2 class="text-center font-allroundermonument text-4xl">
                             {{ $album->name }}
                         </h2>
-                        <p class="mt-4">
-                            {{ $album->description }}
-                        </p>
+                        <div class="mt-4">
+                            {!! $album->description !!}
+                        </div>
                     </div>
                 </div>
             </div>

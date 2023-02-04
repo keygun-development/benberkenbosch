@@ -1,13 +1,15 @@
 @extends('layouts.dashboard')
-@section('pageTitle', 'Albums')
+@section('pageTitle', 'Floating images')
 @section('content')
     <div class="flex justify-between flex-wrap">
         <h1 class="text-3xl">
-            Albums
+            Images
         </h1>
-        <a href="/dashboard/albums/newalbum" class="c-button c-button__black">
-            Nieuw album
-        </a>
+        @if(count($images) < 8)
+            <a href="/dashboard/images/newimage" class="c-button c-button__black">
+                Nieuwe image
+            </a>
+        @endif
     </div>
     <div class="mt-4 overflow-x-auto">
         <div class="mt-4">
@@ -22,21 +24,20 @@
             @endif
         </div>
         <table class="mt-4 w-full">
-            @foreach($albums as $album)
+            @foreach($images as $image)
                 <tr class="border-b">
                     <td class="whitespace-nowrap px-4">
-                        {{ $album->id }}
+                        {{ $image->id }}
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        <a class="text-blue-400" href="/dashboard/albums/{{ $album->id }}">
-                            {{ $album->name }}
+                        <a class="text-blue-400" href="/dashboard/images/{{ $image->id }}">
+                            <div class="inline-block">
+                                <img class="max-w-[90px] max-h-[90px] aspect-square" src="{{ asset($image->image) }}"/>
+                            </div>
                         </a>
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        {{ $album->author }}
-                    </td>
-                    <td class="whitespace-nowrap px-4">
-                        {{ $album->created_at }}
+                        {{ $image->created_at }}
                     </td>
                     <td class="p-4 whitespace-nowrap">
                         <popup
@@ -45,7 +46,7 @@
                         >
                             <template #openpopup>
                                 <div class="mt-4">
-                                    <a @click="this.$refs['popupref'].openPopup({{ $album->id }})"
+                                    <a @click="this.$refs['popupref'].openPopup({{ $image->id }})"
                                        class="c-button c-button__red cursor-pointer">
                                         Verwijderen
                                     </a>
@@ -54,8 +55,8 @@
                             <template #popup="slotprops">
                                 <div class="text-center">
                                     <p class="font-bold whitespace-normal">
-                                        Weet je zeker dat je dit album wilt verwijderen? Hiermee wordt het
-                                        album voorgoed verwijderd.
+                                        Weet je zeker dat je de floating image wilt verwijderen? Hiermee wordt de
+                                        floating image voorgoed verwijderd.
                                     </p>
                                     <div class="flex md:justify-center items-center flex-col md:flex-row mt-4">
                                         <div>
@@ -64,7 +65,7 @@
                                                 Annuleren
                                             </a>
                                         </div>
-                                        <form method="POST" class="mt-4 md:mt-0" action="{{ route('album.delete') }}">
+                                        <form method="POST" class="mt-4 md:mt-0" action="{{ route('image.delete') }}">
                                             @csrf
                                             <input type="hidden" name="id" v-model="slotprops.id"/>
                                             <input type="submit" value="Verwijderen"

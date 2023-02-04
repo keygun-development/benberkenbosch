@@ -17,6 +17,22 @@
         }
     }
 
+    &__red {
+        @apply text-white bg-red-500;
+
+        &:hover {
+            @apply bg-red-600;
+        }
+    }
+
+    &__grey {
+        @apply bg-gray-500 text-white;
+
+        &:hover {
+            @apply bg-gray-600;
+        }
+    }
+
     &__large {
         @apply md:px-10 px-4 md:py-3 py-2;
     }

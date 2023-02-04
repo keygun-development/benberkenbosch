@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\ContentHome;
+use App\Models\FloatingImage;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,7 +16,8 @@ class HomeController extends Controller
     {
         return view('welcome', [
             'album' => Album::latest()->first(),
-            'about' => ContentHome::first()
+            'about' => ContentHome::first(),
+            'images' => FloatingImage::all()
         ]);
     }
 
@@ -28,6 +30,11 @@ class HomeController extends Controller
 
     public function dashboardSave(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'text' => 'required',
+        ]);
+
         $content = ContentHome::where('id', $request->id)->first();
 
         $content->title = $request->title;

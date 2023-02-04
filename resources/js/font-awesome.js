@@ -9,7 +9,9 @@ import {
     faHouse,
     faCompactDisc,
     faImage,
-    faUser
+    faUser,
+    faXmark,
+    faPlay
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -36,7 +38,9 @@ library.add(
     faImage,
     faItunesNote,
     faUser,
-    faBandcamp
+    faBandcamp,
+    faXmark,
+    faPlay
 );
 
 dom.watch();

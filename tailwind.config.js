@@ -2,7 +2,8 @@
 module.exports = {
   content: [
       './resources/**/*.{blade.php, vue}',
-      './resources/views/*.blade.php'
+      './resources/views/*.blade.php',
+      './resources/views/**/*.blade.php'
   ],
   theme: {
     extend: {

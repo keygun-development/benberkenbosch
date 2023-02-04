@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
-@section('pageTitle', 'Albums')
+@section('pageTitle', 'Music')
 @section('content')
     <div class="flex justify-between flex-wrap">
         <h1 class="text-3xl">
-            Albums
+            Music
         </h1>
-        <a href="/dashboard/albums/newalbum" class="c-button c-button__black">
-            Nieuw album
+        <a href="/dashboard/music/newmusic" class="c-button c-button__black">
+            Nieuwe muziek
         </a>
     </div>
     <div class="mt-4 overflow-x-auto">
@@ -22,21 +22,18 @@
             @endif
         </div>
         <table class="mt-4 w-full">
-            @foreach($albums as $album)
+            @foreach($musics as $music)
                 <tr class="border-b">
                     <td class="whitespace-nowrap px-4">
-                        {{ $album->id }}
+                        {{ $music->id }}
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        <a class="text-blue-400" href="/dashboard/albums/{{ $album->id }}">
-                            {{ $album->name }}
+                        <a class="text-blue-400" href="/dashboard/music/{{ $music->id }}">
+                            {{ $music->title }}
                         </a>
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        {{ $album->author }}
-                    </td>
-                    <td class="whitespace-nowrap px-4">
-                        {{ $album->created_at }}
+                        {{ $music->created_at }}
                     </td>
                     <td class="p-4 whitespace-nowrap">
                         <popup
@@ -45,7 +42,7 @@
                         >
                             <template #openpopup>
                                 <div class="mt-4">
-                                    <a @click="this.$refs['popupref'].openPopup({{ $album->id }})"
+                                    <a @click="this.$refs['popupref'].openPopup({{ $music->id }})"
                                        class="c-button c-button__red cursor-pointer">
                                         Verwijderen
                                     </a>
@@ -54,8 +51,8 @@
                             <template #popup="slotprops">
                                 <div class="text-center">
                                     <p class="font-bold whitespace-normal">
-                                        Weet je zeker dat je dit album wilt verwijderen? Hiermee wordt het
-                                        album voorgoed verwijderd.
+                                        Weet je zeker dat je de muziek wilt verwijderen? Hiermee wordt de
+                                        muziek voorgoed verwijderd.
                                     </p>
                                     <div class="flex md:justify-center items-center flex-col md:flex-row mt-4">
                                         <div>
@@ -64,7 +61,7 @@
                                                 Annuleren
                                             </a>
                                         </div>
-                                        <form method="POST" class="mt-4 md:mt-0" action="{{ route('album.delete') }}">
+                                        <form method="POST" class="mt-4 md:mt-0" action="{{ route('music.delete') }}">
                                             @csrf
                                             <input type="hidden" name="id" v-model="slotprops.id"/>
                                             <input type="submit" value="Verwijderen"

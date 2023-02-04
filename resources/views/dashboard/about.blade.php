@@ -1,26 +1,11 @@
 @extends('layouts.dashboard')
-@section('pageTitle', 'Dashboard')
+@section('pageTitle', 'About me')
 @section('content')
     <h1 class="text-3xl">
-        Dashboard
+        About
     </h1>
     <div class="mt-4">
-        <a class="text-gray-400 hover:underline" href="/">
-            <i class="fa-solid fa-arrow-left mr-2"></i>
-            Terug naar home
-        </a>
-        <div class="mt-4">
-            @if($errors->any())
-                <div class="text-red-500">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-        <form class="mt-4" method="POST" action="/dashboard/save">
+        <form class="mt-4" method="POST" action="/dashboard/about/save">
             @csrf
             <input type="hidden" value="{{ $about->id }}" name="id" />
             <div>

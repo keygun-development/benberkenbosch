@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             AlbumSeeder::class,
             MusicSeeder::class,
             UserSeeder::class,
-            ContentHomeSeeder::class
+            ContentHomeSeeder::class,
+            FloatingImageSeeder::class,
+            AboutSeeder::class
         ]);
     }
 }
