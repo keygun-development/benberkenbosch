@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
+        Schema::create('content_home', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('author');
-            $table->date('publish_date');
-            $table->string('thumbnail');
-            $table->string('cover');
-            $table->longText('description');
-            $table->string('artwork');
+            $table->string('title');
+            $table->string('text');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('content_home');
     }
 };

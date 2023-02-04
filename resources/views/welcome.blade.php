@@ -6,7 +6,7 @@
                 :album="$album"
             >
                 @slot('date')
-                    {{ \Carbon\Carbon::now()->format('d-m-Y') < $album->publish_date ? 'Coming soon' : 'Out now' }}
+                    {{ \Carbon\Carbon::now()->format('Y-m-d') < $album->publish_date ? 'Coming soon' : 'Out now' }}
                 @endslot
                 @slot('platforms')
                     <div class="mt-8">
@@ -37,11 +37,11 @@
                     </div>
                 </div>
                 <div class="w-full flex justify-center relative md:my-8">
-                    <div class="lg:w-4/12">
-                        <h2 class="font-allroundermonument text-3xl text-center">
-                            Ben Berkenbosch
+                    <div class="lg:w-4/12 text-center">
+                        <h2 class="font-allroundermonument text-3xl mb-4">
+                            {{ $about->title }}
                         </h2>
-                        <x-about></x-about>
+                        {!! $about->text !!}
                     </div>
                 </div>
                 <div
@@ -76,6 +76,14 @@
                     Buy my music
                 </h2>
                 <div class="flex mt-4">
+                    <a href="https://music.amazon.com/artists/B09B4Z7BPD"
+                       class="text-black hover:text-orange-500 duration-100">
+                        <i class="fa-brands fa-bandcamp fa-3x"></i>
+                    </a>
+                    <a href="https://music.amazon.com/artists/B09B4Z7BPD"
+                       class="text-black hover:text-orange-500 duration-100 mx-12">
+                        <i class="fa-brands fa-itunes-note fa-3x"></i>
+                    </a>
                     <a href="https://music.amazon.com/artists/B09B4Z7BPD"
                        class="text-black hover:text-orange-500 duration-100">
                         <i class="fa-brands fa-amazon fa-3x"></i>

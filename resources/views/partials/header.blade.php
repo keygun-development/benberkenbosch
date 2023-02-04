@@ -60,12 +60,13 @@
                         </dropdown>
                     </div>
                     <div class="block md:hidden">
-                        <li @click="this.$refs.menuDisclosureRef.openUpProfile()" class="cursor-pointer relative">
+                        <li @click="this.$refs.menuDisclosureRef.openUpProfile()" class="cursor-pointer relative p-4">
                             {{ __('Albums') }}
                         </li>
-                        <ul v-if="slotProps.openAlbums">
+                        <ul class="c-mobile__dropdown" v-if="slotProps.openAlbums">
                             @foreach(\App\Models\Album::all() as $album)
                                 <x-nav-link class="w-full" :href="'/albums/'.$album->id"
+                                            :classes="'p-0'"
                                             :active="$album->id == request()->route()->parameter('id')">
                                     {{ __($album->name) }}
                                 </x-nav-link>

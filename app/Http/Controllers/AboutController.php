@@ -10,4 +10,9 @@ class AboutController extends Controller
     {
         return view('about');
     }
+
+    public function dashboard()
+    {
+        return view('dashboard.about');
+    }
 }

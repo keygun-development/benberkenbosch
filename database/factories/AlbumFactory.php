@@ -22,7 +22,8 @@ class AlbumFactory extends Factory
             'publish_date' => fake()->date(),
             'thumbnail' => 'images/wallpaper.png',
             'cover' => 'images/TO.jpg',
-            'description' => fake()->text
+            'description' => fake()->text,
+            'artwork' => fake()->name
         ];
     }
 }

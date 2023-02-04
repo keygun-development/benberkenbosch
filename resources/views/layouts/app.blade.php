@@ -11,6 +11,9 @@
 <div>
     <div id="header">
         @include('partials.header')
+        @if(Auth::check())
+            @include('partials.authNavigation')
+        @endif
         @yield('cta')
     </div>
     <div id="app">

@@ -12,4 +12,9 @@ class AlbumController extends Controller
             'album' => Album::where('id', $id)->first()
         ]);
     }
+
+    public function dashboard()
+    {
+        return view('dashboard.album');
+    }
 }

@@ -4,7 +4,12 @@ import {library, dom} from '@fortawesome/fontawesome-svg-core';
 // import the needed icons here
 import {
     faChevronDown,
-    faEnvelope
+    faEnvelope,
+    faArrowLeft,
+    faHouse,
+    faCompactDisc,
+    faImage,
+    faUser
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -12,7 +17,9 @@ import {
     faInstagram,
     faSpotify,
     faAmazon,
-    faDiscord
+    faDiscord,
+    faItunesNote,
+    faBandcamp
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -22,7 +29,14 @@ library.add(
     faSpotify,
     faAmazon,
     faDiscord,
-    faEnvelope
+    faEnvelope,
+    faArrowLeft,
+    faHouse,
+    faCompactDisc,
+    faImage,
+    faItunesNote,
+    faUser,
+    faBandcamp
 );
 
 dom.watch();

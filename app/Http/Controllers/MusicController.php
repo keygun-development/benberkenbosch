@@ -13,4 +13,9 @@ class MusicController extends Controller
             'musics' => Music::all()
         ]);
     }
+
+    public function dashboard()
+    {
+        return view('dashboard.music');
+    }
 }

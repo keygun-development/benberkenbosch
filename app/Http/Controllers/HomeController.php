@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\ContentHome;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,7 +14,26 @@ class HomeController extends Controller
     public function view(): Factory|View|Application
     {
         return view('welcome', [
-            'album' => Album::latest()->first()
+            'album' => Album::latest()->first(),
+            'about' => ContentHome::first()
         ]);
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard.home', [
+            'about' => ContentHome::first()
+        ]);
+    }
+
+    public function dashboardSave(Request $request)
+    {
+        $content = ContentHome::where('id', $request->id)->first();
+
+        $content->title = $request->title;
+        $content->text = $request->text;
+        $content->update();
+
+        return redirect()->back();
     }
 }

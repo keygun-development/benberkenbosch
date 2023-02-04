@@ -63,8 +63,18 @@
         @apply overflow-y-scroll;
     }
 
+    .c-mobile__dropdown {
+        li {
+            @apply bg-gray-900 text-white;
+
+            a {
+                @apply p-4;
+            }
+        }
+    }
+
     li {
-        @apply w-full p-4;
+        @apply w-full;
 
         &.current-menu-item {
             @apply bg-black text-white;
@@ -74,6 +84,10 @@
             &:hover {
                 @apply font-semibold;
             }
+        }
+
+        a {
+            @apply flex p-4;
         }
     }
 }
