@@ -23,7 +23,9 @@ class AlbumFactory extends Factory
             'thumbnail' => 'images/wallpaper.png',
             'cover' => 'images/TO.jpg',
             'description' => fake()->text,
-            'artwork' => fake()->name
+            'artwork' => fake()->name,
+            'buttontext' => 'Listen now!',
+            'buttonlink' => 'http://127.0.0.1:8000/albums/1'
         ];
     }
 }

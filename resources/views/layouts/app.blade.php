@@ -9,15 +9,17 @@
 </head>
 <body>
 <div>
-    <div id="header">
-        @include('partials.header')
-        @if(Auth::check())
-            @include('partials.authNavigation')
-        @endif
-        @yield('cta')
-    </div>
-    <div id="app">
-        @yield('content')
+    <div class="min-h-[calc(100vh-15vh)]">
+        <div id="header">
+            @include('partials.header')
+            @if(Auth::check())
+                @include('partials.authNavigation')
+            @endif
+            @yield('cta')
+        </div>
+        <div id="app">
+            @yield('content')
+        </div>
     </div>
     <div id="footer">
         @include('partials.footer')

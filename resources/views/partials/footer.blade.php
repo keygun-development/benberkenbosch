@@ -14,7 +14,7 @@
                 <a href="https://music.amazon.com/artists/B09B4Z7BPD" class="text-white hover:text-orange-500 duration-100">
                     <i class="fa-brands fa-amazon fa-2x"></i>
                 </a>
-                <a class="text-white hover:text-sky-500 duration-100">
+                <a href="https://discord.com/invite/hNyuw78YT3" class="text-white hover:text-sky-500 duration-100">
                     <i class="fa-brands fa-discord fa-2x"></i>
                 </a>
                 <a href="mailto:benberkenbosch@gmail.com" class="text-white hover:text-blue-500 duration-100">

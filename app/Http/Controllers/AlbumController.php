@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\AlbumMeta;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,7 +14,7 @@ class AlbumController extends Controller
     public function view($id)
     {
         return view('albumdetail', [
-            'album' => Album::findOrFail($id)
+            'album' => Album::with('albumMetas')->findOrFail($id)
         ]);
     }
 
@@ -32,7 +33,7 @@ class AlbumController extends Controller
     public function detail(Request $request)
     {
         return view('dashboard.albumdetail', [
-            'album' => Album::findOrFail($request->id)
+            'album' => Album::with('albumMetas')->findOrFail($request->id)
         ]);
     }
 
@@ -49,12 +50,34 @@ class AlbumController extends Controller
             'name' => 'required',
             'author' => 'required',
             'date' => 'required',
-            'artwork' => 'required',
             'text' => 'required',
+            'thumbnail' => 'max:2048',
+            'cover' => 'max:2048',
         ]);
 
         $album = Album::where('id', $request->id)->first();
         $this->extracted($request, $album);
+        $album->save();
+        $existingAlbumMetas = AlbumMeta::where('album_id', $request->id)->get();
+        $existingAlbumMetasCount = count($existingAlbumMetas);
+
+        for ($i = 0; $i < $request->repeats; $i++) {
+            if ($i < $existingAlbumMetasCount) {
+                $album_meta = $existingAlbumMetas[$i];
+            } else {
+                $album_meta = new AlbumMeta();
+                $album_meta->album_id = $request->id;
+            }
+
+            $album_meta->icon = $request->input("svg" . ($i + 1)) ?? '';
+            $album_meta->link = $request->input("url" . ($i + 1)) ?? '';
+            $album_meta->save();
+        }
+
+        for ($i = $request->repeats; $i < $existingAlbumMetasCount; $i++) {
+            $album_meta = $existingAlbumMetas[$i];
+            $album_meta->delete();
+        }
         return redirect()->back();
     }
 
@@ -72,6 +95,15 @@ class AlbumController extends Controller
 
         $album = new Album();
         $this->extracted($request, $album);
+        $album->save();
+        $album_id = $album->id;
+        for ($i = 0; $i < $request->repeats; $i++) {
+            $album_meta = new AlbumMeta();
+            $album_meta->album_id = $album_id;
+            $album_meta->icon = $request->input("svg" . $i + 1) ?? '';
+            $album_meta->link = $request->input("url" . $i + 1) ?? '';
+            $album_meta->save();
+        }
         return redirect('/dashboard/albums');
     }
 
@@ -91,8 +123,9 @@ class AlbumController extends Controller
         }
         $album->author = $request->author;
         $album->publish_date = $request->date;
-        $album->artwork = $request->artwork;
+        $album->artwork = $request->artwork ?? '';
         $album->description = $request->text;
-        $album->save();
+        $album->buttontext = $request->buttontext;
+        $album->buttonlink = $request->buttonlink;
     }
 }

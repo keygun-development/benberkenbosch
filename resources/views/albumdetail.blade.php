@@ -11,18 +11,12 @@
                 @slot('platforms')
                     <div class="flex justify-center w-full mt-8">
                         <div class="md:w-8/12 w-full flex justify-between">
-                            <a href="https://www.youtube.com/@BenBerkenboschMusic"
-                               class="text-white hover:text-red-500 duration-100">
-                                <i class="fa-brands fa-youtube text-3xl"></i>
-                            </a>
-                            <a href="https://open.spotify.com/artist/052Q9RnerwsOF5MDRHiSwk?si=v6oBKLCySCeFA23Mn5F-PA&nd=1"
-                               class="text-white hover:text-green-500 duration-100">
-                                <i class="fa-brands fa-spotify text-3xl"></i>
-                            </a>
-                            <a href="https://music.amazon.com/artists/B09B4Z7BPD"
-                               class="text-white hover:text-orange-500 duration-100">
-                                <i class="fa-brands fa-amazon text-3xl"></i>
-                            </a>
+                            @foreach($album->albumMetas as $albummeta)
+                                <a href="{{ $albummeta->link }}"
+                                   class="text-white duration-100">
+                                    <i class="fa-brands fa-{{ $albummeta->icon }} text-3xl"></i>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 @endslot

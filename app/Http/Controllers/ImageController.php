@@ -46,7 +46,7 @@ class ImageController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'image' => 'required|max:2048',
+            'image' => 'max:2048',
             'position' => 'required|integer|between:1,8',
         ]);
         $image = FloatingImage::where('id', $request->id)->first();

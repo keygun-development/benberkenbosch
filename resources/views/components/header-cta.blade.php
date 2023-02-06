@@ -19,8 +19,10 @@
         <a href="#app" class="absolute bottom-0 c-arrow__down">
             <i class="fa-solid fa-chevron-down text-white opacity-30 text-3xl"></i>
         </a>
-        <p class="absolute bottom-0 right-0 text-gray-400 text-xs md:text-lg">
-            Artwork by: {{ $album->artwork }}
-        </p>
+        @if($album->artwork)
+            <p class="absolute bottom-0 right-0 text-gray-400 text-xs md:text-lg">
+                Artwork by: {{ $album->artwork }}
+            </p>
+        @endif
     </div>
 </div>

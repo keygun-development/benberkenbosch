@@ -18,7 +18,7 @@ class FloatingImageFactory extends Factory
     {
         return [
             'image' => 'images/ABW.jpg',
-            'position' => fake()->randomNumber()
+            'position' => fake()->numberBetween(1, 8)
         ];
     }
 }

@@ -58,6 +58,35 @@
                     <input type="text" name="artwork" class="c-form__input"/>
                 </div>
             </div>
+            <div class="mt-4 flex flex-col lg:flex-row gap-4">
+                <div>
+                    <p class="text-lg font-bold">
+                        Button text:
+                    </p>
+                    <input type="text" name="buttontext" class="c-form__input"/>
+                </div>
+                <div>
+                    <p class="text-lg font-bold">
+                        Button (full)link:
+                    </p>
+                    <input type="text" name="buttonlink" class="c-form__input"/>
+                </div>
+            </div>
+            <div class="flex items-center flex-col md:flex-row mt-4 gap-4 max-w-full flex-wrap">
+                <album-link
+                    ref="albumref"
+                >
+                    <template #add="slotprops">
+                        <div class="inline-block">
+                            <input type="hidden" name="repeats" :value="slotprops.repeats" />
+                            <div @click="this.$refs['albumref'].repeat++"
+                                 class="rounded-full p-4 bg-black cursor-pointer hover:bg-white hover:text-black text-white duration-300">
+                                <i class="fa-solid fa-plus fa-2x"></i>
+                            </div>
+                        </div>
+                    </template>
+                </album-link>
+            </div>
             <div class="mt-4">
                 <p class="text-lg font-bold">
                     Beschrijving:

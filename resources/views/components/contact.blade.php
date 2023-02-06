@@ -1,7 +1,7 @@
 <h2 class="text-3xl font-allroundermonument">
     Get in touch
 </h2>
-<form class="mt-4 md:w-6/12 w-full" method="POST">
+<form action="/send-email" class="mt-4 md:w-6/12 w-full" method="POST">
     @csrf
     <div>
         <p>

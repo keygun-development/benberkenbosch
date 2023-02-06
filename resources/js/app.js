@@ -6,6 +6,7 @@ import MenuDisclosure from "./components/MenuDisclosure.vue";
 import Editor from "./components/Editor.vue";
 import Popup from "./components/Popup.vue";
 import IframeLoader from "./components/IframeLoader.vue";
+import AlbumLink from "./components/AlbumLink.vue";
 import '../css/app.scss';
 import './font-awesome.js';
 
@@ -19,4 +20,5 @@ createApp({})
     .component('Editor', Editor)
     .component('Popup', Popup)
     .component('IframeLoader', IframeLoader)
+    .component('AlbumLink', AlbumLink)
     .mount('#app')

@@ -11,7 +11,8 @@ import {
     faImage,
     faUser,
     faXmark,
-    faPlay
+    faPlay,
+    faPlus
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -40,7 +41,8 @@ library.add(
     faUser,
     faBandcamp,
     faXmark,
-    faPlay
+    faPlay,
+    faPlus
 );
 
 dom.watch();

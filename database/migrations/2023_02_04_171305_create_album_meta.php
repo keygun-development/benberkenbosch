@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('floating_images', function (Blueprint $table) {
+        Schema::create('album_meta', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->integer('position');
+            $table->integer('album_id');
+            $table->string('icon');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('floating_images');
+        Schema::dropIfExists('album_meta');
     }
 };
