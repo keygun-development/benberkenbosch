@@ -8,7 +8,7 @@
             <div class="flex w-full items-center flex-col">
                 @foreach($musics as $music)
                     <iframe-loader
-                        :title="'{{ $music->title }}'"
+                        :title="{{ json_encode($music->title) }}"
                         ref="iframe{{ $music->id }}"
                     >
                         <template #loader>
@@ -29,10 +29,3 @@
         </div>
     @endsection
 </x-app-layout>
-<script>
-    import IframeLoader from "../js/components/IframeLoader";
-
-    export default {
-        components: {IframeLoader}
-    }
-</script>
