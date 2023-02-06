@@ -3,7 +3,7 @@
     @section('content')
         <div class="container mx-auto px-4">
             <div class="flex justify-center items-center min-h-screen max-h-screen">
-                <div class="rounded-lg bg-white p-8 shadow-lg w-6/12">
+                <div class="rounded-lg bg-white p-8 shadow-lg md:w-6/12">
                     <h1 class="text-3xl text-center">
                         Login
                     </h1>

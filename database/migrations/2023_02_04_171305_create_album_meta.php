@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('album_id');
             $table->string('icon');
-            $table->string('link');
+            $table->longText('link');
             $table->timestamps();
         });
     }

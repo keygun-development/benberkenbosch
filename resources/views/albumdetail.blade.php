@@ -26,7 +26,7 @@
     @section('content')
         <div class="container mx-auto px-4 my-8">
             <div class="flex justify-center w-full">
-                <div class="flex flex-col md:flex-row md:justify-between items-center md:w-10/12 w-full">
+                <div class="flex flex-col md:flex-row md:justify-between md:w-10/12 w-full">
                     <div class="md:w-5/12 w-full">
                         <img src="{{ asset($album->cover) }}"/>
                     </div>

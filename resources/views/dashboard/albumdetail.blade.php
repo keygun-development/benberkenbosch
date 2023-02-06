@@ -100,7 +100,7 @@
                 <p class="text-lg font-bold">
                     Beschrijving:
                 </p>
-                <editor :text="'{{ $album->description }}'"></editor>
+                <editor :text="{{ json_encode($album->description) }}"></editor>
             </div>
             <div class="mt-4">
                 <input type="submit" class="c-button__black c-button cursor-pointer" value="Opslaan"/>

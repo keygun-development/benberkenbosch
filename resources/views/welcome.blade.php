@@ -94,11 +94,11 @@
                 </h2>
                 <div class="flex mt-4">
                     <a href="https://benberkenbosch.bandcamp.com/"
-                       class="text-black hover:text-orange-500 duration-100">
+                       class="text-black hover:text-[#629aa9] duration-100">
                         <i class="fa-brands fa-bandcamp fa-3x"></i>
                     </a>
                     <a href="https://music.apple.com/nl/artist/ben-berkenbosch/1578080607?l=en"
-                       class="text-black hover:text-orange-500 duration-100 mx-12">
+                       class="text-black hover:text-[#fc3c44] duration-100 mx-12">
                         <i class="fa-brands fa-itunes-note fa-3x"></i>
                     </a>
                     <a href="https://music.amazon.com/artists/B09B4Z7BPD"

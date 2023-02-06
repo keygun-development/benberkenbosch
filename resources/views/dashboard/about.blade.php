@@ -18,7 +18,7 @@
                 <h2 class="text-lg font-bold">
                     Content:
                 </h2>
-                <editor :text="'{{ $about->text }}'"></editor>
+                <editor :text="{{ json_encode($about->text) }}"></editor>
             </div>
             <div class="mt-4">
                 <input class="c-button c-button__black cursor-pointer" type="submit" value="Opslaan" />

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->longText('description');
             $table->string('artwork');
             $table->string('buttontext');
-            $table->string('buttonlink');
+            $table->longText('buttonlink');
             $table->timestamps();
         });
     }
