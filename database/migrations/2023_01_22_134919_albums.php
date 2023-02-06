@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('artwork');
             $table->string('buttontext');
             $table->longText('buttonlink');
+            $table->string('cover_art');
             $table->timestamps();
         });
     }

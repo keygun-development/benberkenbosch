@@ -89,7 +89,6 @@ class AlbumController extends Controller
             'cover' => 'required|max:2048',
             'author' => 'required',
             'date' => 'required',
-            'artwork' => 'required',
             'text' => 'required',
         ]);
 
@@ -123,7 +122,8 @@ class AlbumController extends Controller
         }
         $album->author = $request->author;
         $album->publish_date = $request->date;
-        $album->artwork = $request->artwork ?? '';
+        $album->artwork = $request->thumbnail_art ?? '';
+        $album->cover_art = $request->cover_art ?? '';
         $album->description = $request->text;
         $album->buttontext = $request->buttontext;
         $album->buttonlink = $request->buttonlink;

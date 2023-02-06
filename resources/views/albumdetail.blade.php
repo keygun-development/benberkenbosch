@@ -29,6 +29,11 @@
                 <div class="flex flex-col md:flex-row md:justify-between md:w-10/12 w-full">
                     <div class="md:w-5/12 w-full">
                         <img src="{{ asset($album->cover) }}"/>
+                        @if($album->cover_art)
+                            <p class="text-gray-400">
+                                Cover art by: {{ $album->cover_art }}
+                            </p>
+                        @endif
                     </div>
                     <div class="md:w-6/12 mt-4 md:mt-0">
                         <h2 class="text-center font-allroundermonument text-4xl">

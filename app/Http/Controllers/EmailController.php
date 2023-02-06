@@ -13,7 +13,7 @@ class EmailController extends Controller
 
         Mail::send('emails.form', ['data' => $data], function ($message) use ($data) {
             $message->from($data['email'], $data['name']);
-            $message->to('info.benberkenbosch@gmail.com')->subject($data['subject']);
+            $message->to('keaganmulder1@gmail.com')->subject($data['subject']);
         });
 
         return redirect('/');

@@ -10,7 +10,7 @@ class ImageController extends Controller
     public function dashboard()
     {
         return view('dashboard.images', [
-            'images' => FloatingImage::all()
+            'images' => FloatingImage::orderBy('position')->get()
         ]);
     }
 
@@ -35,8 +35,7 @@ class ImageController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'image' => 'required',
-            'position' => 'required|integer|between:1,8',
+            'image' => 'required'
         ]);
         $image = new FloatingImage();
         $this->extracted($request, $image);
@@ -46,8 +45,7 @@ class ImageController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'image' => 'max:2048',
-            'position' => 'required|integer|between:1,8',
+            'image' => 'max:2048'
         ]);
         $image = FloatingImage::where('id', $request->id)->first();
         $this->extracted($request, $image);
@@ -64,7 +62,16 @@ class ImageController extends Controller
         if ($request->image) {
             $image->image = (new ImageUploadController)->uploadImg($request->image);
         }
-        $image->position = $request->position;
+        $image->position = 0;
         $image->save();
+    }
+
+    public function setPositions(Request $request)
+    {
+        foreach ($request->request as $key => $item) {
+            $image = FloatingImage::where('id', $item['id'])->firstOrFail();
+            $image->position = $key;
+            $image->save();
+        }
     }
 }

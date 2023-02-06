@@ -7,6 +7,7 @@ import Editor from "./components/Editor.vue";
 import Popup from "./components/Popup.vue";
 import IframeLoader from "./components/IframeLoader.vue";
 import AlbumLink from "./components/AlbumLink.vue";
+import ImagesSlide from "./components/ImagesSlide.vue";
 import '../css/app.scss';
 import './font-awesome.js';
 
@@ -21,4 +22,5 @@ createApp({})
     .component('Popup', Popup)
     .component('IframeLoader', IframeLoader)
     .component('AlbumLink', AlbumLink)
+    .component('ImagesSlide', ImagesSlide)
     .mount('#app')

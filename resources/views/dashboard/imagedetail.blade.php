@@ -30,12 +30,6 @@
                 <input class="mt-4" type="file" name="image" accept=".jpg,.jpeg,.png,.webp,.jfif"/>
             </div>
             <div class="mt-4">
-                <p class="text-lg font-bold">
-                    Positie:
-                </p>
-                <input name="position" class="c-form__input" type="number" value="{{ $image->position }}" max="8" min="1" />
-            </div>
-            <div class="mt-4">
                 <input type="submit" class="c-button__black c-button cursor-pointer" value="Opslaan"/>
             </div>
         </form>

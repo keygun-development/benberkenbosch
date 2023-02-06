@@ -13,7 +13,7 @@ class MusicController extends Controller
     public function view()
     {
         return view('music', [
-            'musics' => Music::all()
+            'musics' => Music::latest('created_at')->get()
         ]);
     }
 

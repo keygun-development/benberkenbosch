@@ -23,21 +23,28 @@
                 </div>
             @endif
         </div>
-        <table class="mt-4 w-full">
-            @foreach($images as $image)
-                <tr class="border-b">
+        <images-slide
+            :images="{{ $images }}"
+            ref="imageref"
+        >
+            <template #image="slotprops">
+                <tr class="border-b flex items-center justify-between">
                     <td class="whitespace-nowrap px-4">
-                        {{ $image->id }}
+                        @{{ slotprops.image.id }}
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        <a class="text-blue-400" href="/dashboard/images/{{ $image->id }}">
+                        <a class="text-blue-400" :href="'/dashboard/images/'+slotprops.image.id">
                             <div class="inline-block">
-                                <img class="max-w-[90px] max-h-[90px] aspect-square" src="{{ asset($image->image) }}"/>
+                                <img class="max-w-[90px] max-h-[90px] aspect-square"
+                                     :src="slotprops.url+'/'+slotprops.image.image"/>
                             </div>
                         </a>
                     </td>
                     <td class="whitespace-nowrap px-4">
-                        {{ $image->created_at }}
+                        @{{ slotprops.image.position }}
+                    </td>
+                    <td class="whitespace-nowrap px-4">
+                        @{{ slotprops.image.created_at }}
                     </td>
                     <td class="p-4 whitespace-nowrap">
                         <popup
@@ -46,13 +53,13 @@
                         >
                             <template #openpopup>
                                 <div class="mt-4">
-                                    <a @click="this.$refs['popupref'].openPopup({{ $image->id }})"
+                                    <a @click="this.$refs['popupref'].openPopup(slotprops.image.id)"
                                        class="c-button c-button__red cursor-pointer">
                                         Verwijderen
                                     </a>
                                 </div>
                             </template>
-                            <template #popup="slotprops">
+                            <template #popup="popupprops">
                                 <div class="text-center">
                                     <p class="font-bold whitespace-normal">
                                         Weet je zeker dat je de floating image wilt verwijderen? Hiermee wordt de
@@ -65,9 +72,10 @@
                                                 Annuleren
                                             </a>
                                         </div>
-                                        <form method="POST" class="mt-4 md:mt-0" action="{{ route('image.delete') }}">
+                                        <form method="POST" class="mt-4 md:mt-0"
+                                              action="{{ route('image.delete') }}">
                                             @csrf
-                                            <input type="hidden" name="id" v-model="slotprops.id"/>
+                                            <input type="hidden" name="id" v-model="popupprops.id"/>
                                             <input type="submit" value="Verwijderen"
                                                    class="c-button c-button__red cursor-pointer"/>
                                         </form>
@@ -77,7 +85,7 @@
                         </popup>
                     </td>
                 </tr>
-            @endforeach
-        </table>
+            </template>
+        </images-slide>
     </div>
 @endsection
