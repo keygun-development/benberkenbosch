@@ -90,12 +90,15 @@ class AlbumController extends Controller
             'author' => 'required',
             'date' => 'required',
             'text' => 'required',
+            'buttontext' => 'required',
         ]);
 
         $album = new Album();
         $this->extracted($request, $album);
         $album->save();
         $album_id = $album->id;
+        $album->buttonlink = $request->buttonlink ?? '/albums/' . $album->id;
+        $album->save();
         for ($i = 0; $i < $request->repeats; $i++) {
             $album_meta = new AlbumMeta();
             $album_meta->album_id = $album_id;
@@ -120,12 +123,12 @@ class AlbumController extends Controller
         if ($request->cover) {
             $album->cover = (new ImageUploadController)->uploadImg($request->cover);
         }
-        $album->author = $request->author;
+        $album->author = $request->author ?? '';
         $album->publish_date = $request->date;
         $album->artwork = $request->thumbnail_art ?? '';
         $album->cover_art = $request->cover_art ?? '';
-        $album->description = $request->text;
-        $album->buttontext = $request->buttontext;
-        $album->buttonlink = $request->buttonlink;
+        $album->description = $request->text ?? '';
+        $album->buttontext = $request->buttontext ?? '';
+        $album->buttonlink = $request->buttonlink ?? '/albums/' . $album->id;
     }
 }
