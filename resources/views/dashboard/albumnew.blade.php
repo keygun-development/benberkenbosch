@@ -55,13 +55,13 @@
                     <p class="text-lg font-bold">
                         Thumbnail artwork:
                     </p>
-                    <input type="text" name="thumbnail_art" value="{{ $album->artwork }}" class="c-form__input"/>
+                    <input type="text" name="thumbnail_art" value="{{ $album->artwork ?? '' }}" class="c-form__input"/>
                 </div>
                 <div>
                     <p class="text-lg font-bold">
                         Cover art:
                     </p>
-                    <input type="text" name="cover_art" value="{{ $album->cover_art }}" class="c-form__input"/>
+                    <input type="text" name="cover_art" value="{{ $album->cover_art ?? '' }}" class="c-form__input"/>
                 </div>
             </div>
             <div class="mt-4 flex flex-col lg:flex-row gap-4">
