@@ -4,7 +4,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MusicController;
@@ -29,8 +28,6 @@ Route::get('/contact', [ContactController::class, 'view'])->name('contact');
 Route::get('/dashboard/login', [AuthController::class, 'view'])->name('dashboard.login');
 
 Route::post('/dashboard/login/send', [AuthController::class, 'login'])->name('dashboard.login.send');
-
-Route::post('/send-email', [EmailController::class, 'send'])->name('email.send');
 
 Route::middleware('auth')->prefix('dashboard')->group(function() {
     Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard.home');
