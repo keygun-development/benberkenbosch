@@ -11,7 +11,7 @@
         "php": "^8.0.2",
         "ext-gd": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "intervention/image": "^3.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"
@@ -21,7 +21,7 @@
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
+        "nunomaduro/collision": "^7.10",
         "phpunit/phpunit": "^10.5.5",
         "slevomat/coding-standard": "^8.13",
         "spatie/laravel-ignition": "^1.0",
