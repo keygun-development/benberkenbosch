@@ -6,6 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('pageTitle') - Ben Berkenbosch</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="preload" href="{{ asset($hero) }}" as="image" />
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 <div>
@@ -26,5 +28,4 @@
     </div>
 </div>
 </body>
-@vite(['resources/js/app.js'])
 </html>

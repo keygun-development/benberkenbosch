@@ -1,1 +1,1 @@
-<img class="c-image__hover {{ $class }}" src="{{ $src }}" />
+<img class="c-image__hover {{ $class }}" src="{{ $src }}" loading="lazy" />
