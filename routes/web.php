@@ -26,10 +26,11 @@ Route::get('/music', [MusicController::class, 'view'])->name('music');
 Route::get('/about', [AboutController::class, 'view'])->name('about');
 Route::get('/contact', [ContactController::class, 'view'])->name('contact');
 Route::get('/dashboard/login', [AuthController::class, 'view'])->name('dashboard.login');
+Route::fallback(fn () => view('404'));
 
 Route::post('/dashboard/login/send', [AuthController::class, 'login'])->name('dashboard.login.send');
 
-Route::middleware('auth')->prefix('dashboard')->group(function() {
+Route::middleware('auth')->prefix('dashboard')->group(function(): void {
     Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard.home');
 
     Route::post('/save', [HomeController::class, 'dashboardSave'])->name('dashboard.save');
