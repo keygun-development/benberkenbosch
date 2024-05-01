@@ -24,6 +24,11 @@
                     <i class="fa-solid fa-envelope fa-2x"></i>
                 </a>
             </div>
+            <div class="flex items-center justify-center my-4">
+                <a href="/policy" class="text-white hover:underline">
+                    Privacy policy
+                </a>
+            </div>
             <div class="mt-4">
                 <p class="text-white text-center">
                     © Ben Berkenbosch | All Rights Reserved
