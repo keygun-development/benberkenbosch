@@ -26,6 +26,7 @@ Route::get('/music', [MusicController::class, 'view'])->name('music');
 Route::get('/about', [AboutController::class, 'view'])->name('about');
 Route::get('/contact', [ContactController::class, 'view'])->name('contact');
 Route::get('/dashboard/login', [AuthController::class, 'view'])->name('dashboard.login');
+Route::get('/links', [HomeController::class, 'links'])->name('links');
 Route::fallback(fn () => view('404'));
 
 Route::post('/dashboard/login/send', [AuthController::class, 'login'])->name('dashboard.login.send');

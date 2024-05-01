@@ -17,14 +17,19 @@ class HomeController extends Controller
         return view('welcome', [
             'album' => Album::latest()->first(),
             'about' => ContentHome::first(),
-            'images' => FloatingImage::all()
+            'images' => FloatingImage::all(),
         ]);
+    }
+
+    public function links(): Factory|View|Application
+    {
+        return view('links');
     }
 
     public function dashboard()
     {
         return view('dashboard.home', [
-            'about' => ContentHome::first()
+            'about' => ContentHome::first(),
         ]);
     }
 
