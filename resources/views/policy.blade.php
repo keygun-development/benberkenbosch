@@ -320,6 +320,78 @@
                                 Policy.</p>
                             <p>You are advised to review this Privacy Policy periodically for any changes. Changes to
                                 this Privacy Policy are effective when they are posted on this page.</p>
+                            <div class="gb-container gb-container-e1000268">
+                                <h2 id="legal-basis">Legal Basis</h2>
+                                <p>Due to the fact that the integration of Spotify is not necessary for the operation of
+                                    the website, the integration requires consent.</p>
+                                <h2 id="data-transfer">Data Transfer</h2>
+                                <p>An agreement according to Art. 26 GDPR must be concluded with Spotify AB. The
+                                    essential points must be made available to the data subject, in particular who the
+                                    data subject can contact to exercise their rights. </p>
+                                <h2 id="privacy-statement">Privacy Statement for the Service Spotify</h2>
+                                <p>When accessing some sub-services of our website, additional personal services are
+                                    processed. Processed data categories: technical connection data of the server access
+                                    (IP address, date, time, requested page, browser information)data for creating usage
+                                    statistics. Purpose of processing: Delivery of content provided by third parties and
+                                    transmission of audio content. The legal basis for processing: Your consent
+                                    according to Art. 6 (1) a GDPR. Data is transmitted: as joint controllers for
+                                    Spotify AB, Regeringsgatan 19, SE-111 53 Stockholm, Sweden. </p>
+                                <h2 id="additional-information">Additional Information</h2>
+                                <p>In addition to the above information, the data protection information must also
+                                    contain the mandatory information from Art. 13 or 14 GDPR: Name and contact details
+                                    of the controller, if necessary the contact details of the data protection officer,
+                                    the purposes for which the personal data are to be processed, the legitimate
+                                    interests, if the processing is based on Article 6 (1) f GDPR, the duration of the
+                                    processing, information on the rights of the data subjects including the right to
+                                    lodge a complaint with a supervisory authority, the possibility of simply revoking
+                                    consent given, and information as to whether the Provision of the data is required
+                                    by law or contract or what the possible consequences of non-provision would be. In
+                                    the event that the data is used for automated decision-making, including profiling,
+                                    meaningful information about the logic involved and the scope and impact on the data
+                                    subject must be provided. The processing of the data must also be documented in the
+                                    list of processing activities in accordance with Art. 30 GDPR. The information
+                                    required for this can already be found in the privacy statement, which can be
+                                    created from the previous information.</p>
+                            </div>
+                            <div class="gb-container gb-container-e1000268">
+                                <h2 id="legal-basis">Legal Basis</h2>
+                                <p>Due to the fact that the integration of YouTube is not necessary for the operation of
+                                    the website, the integration requires consent.</p>
+                                <h2 id="data-transfer">Data Transfer</h2>
+                                <p>An agreement according to Art. 26 GDPR must be concluded with Google Ireland Limited.
+                                    The essential points must be made available to the data subject, in particular who
+                                    the data subject can contact to exercise their rights. </p>
+                                <h2 id="privacy-statement">Privacy Statement for the Service YouTube</h2>
+                                <p>When accessing some sub-services of our website, additional personal services are
+                                    processed. Processed data categories: technical connection data of the server access
+                                    (IP address, date, time, requested page, browser information)data for creating usage
+                                    statistics. Purpose of processing: Delivery of content provided by third parties,
+                                    Selection of online advertising on other platforms, which are automatically selected
+                                    using real-time bidding based on user behavior and transmission and display of video
+                                    content. The legal basis for processing: Your consent according to Art. 6 (1) a
+                                    GDPR. Data is transmitted: as joint controllers for Google Ireland Limited, Gordon
+                                    House, Barrow Street, Dublin 4, Ireland. This may also mean a transfer of personal
+                                    data to a country outside the European Union. The data is transferred to the USA on
+                                    the basis of Art. 45 GDPR in conjunction with the European Commission's adequacy
+                                    decision C(2023) 4745, since the data recipient has committed to comply with the
+                                    data processing principles of the Data Privacy Framework (DPF). </p>
+                                <h2 id="additional-information">Additional Information</h2>
+                                <p>In addition to the above information, the data protection information must also
+                                    contain the mandatory information from Art. 13 or 14 GDPR: Name and contact details
+                                    of the controller, if necessary the contact details of the data protection officer,
+                                    the purposes for which the personal data are to be processed, the legitimate
+                                    interests, if the processing is based on Article 6 (1) f GDPR, the duration of the
+                                    processing, information on the rights of the data subjects including the right to
+                                    lodge a complaint with a supervisory authority, the possibility of simply revoking
+                                    consent given, and information as to whether the Provision of the data is required
+                                    by law or contract or what the possible consequences of non-provision would be. In
+                                    the event that the data is used for automated decision-making, including profiling,
+                                    meaningful information about the logic involved and the scope and impact on the data
+                                    subject must be provided. The processing of the data must also be documented in the
+                                    list of processing activities in accordance with Art. 30 GDPR. The information
+                                    required for this can already be found in the privacy statement, which can be
+                                    created from the previous information.</p>
+                            </div>
                             <h2>Contact Us</h2>
                             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                             <ul>

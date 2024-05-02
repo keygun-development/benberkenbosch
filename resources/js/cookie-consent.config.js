@@ -130,7 +130,6 @@ function removeSpotifyIframe() {
 document.addEventListener("DOMContentLoaded", function() {
     const preferences = document.getElementsByClassName('openPreferences')
     if(!preferences) return;
-    console.log(preferences.length)
     for (let i = 0; i < preferences.length; i++) {
         preferences[i].addEventListener('click', function () {
             CookieConsent.showPreferences();
