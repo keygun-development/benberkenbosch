@@ -1,3 +1,7 @@
 .c-image__hover {
-    @apply aspect-square w-6/12 h-auto object-cover absolute shadow-xl;
+    @apply aspect-square w-6/12 h-auto object-cover absolute shadow-xl duration-300 rounded;
+
+    &:hover {
+        @apply shadow-2xl;
+    }
 }

@@ -6,7 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PolicyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +28,8 @@ Route::get('/music', [MusicController::class, 'view'])->name('music');
 Route::get('/about', [AboutController::class, 'view'])->name('about');
 Route::get('/contact', [ContactController::class, 'view'])->name('contact');
 Route::get('/dashboard/login', [AuthController::class, 'view'])->name('dashboard.login');
-Route::get('/links', [HomeController::class, 'links'])->name('links');
+Route::get('/links', [LinkController::class, 'view'])->name('links');
+Route::get('/policy', [PolicyController::class, 'view'])->name('policy');
 Route::fallback(fn () => view('404'));
 
 Route::post('/dashboard/login/send', [AuthController::class, 'login'])->name('dashboard.login.send');

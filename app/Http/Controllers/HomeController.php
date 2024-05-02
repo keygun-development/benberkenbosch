@@ -21,11 +21,6 @@ class HomeController extends Controller
         ]);
     }
 
-    public function links(): Factory|View|Application
-    {
-        return view('links');
-    }
-
     public function dashboard()
     {
         return view('dashboard.home', [
