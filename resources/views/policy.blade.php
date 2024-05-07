@@ -2,7 +2,7 @@
     @section('pageTitle', 'Privacy Policy')
     @section('content')
         <div class="container mx-auto px-4 mt-4 mb-8">
-            <h1 class="md:text-center font-allroundermonument text-3xl">
+            <h1 class="md:text-center font-asap text-3xl">
                 Privacy Policy
             </h1>
             <div class="flex w-full items-center flex-col mt-4">

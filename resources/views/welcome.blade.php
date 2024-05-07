@@ -47,7 +47,7 @@
                 </div>
                 <div class="w-full flex justify-center relative md:my-8">
                     <div class="lg:w-4/12 text-center">
-                        <h2 class="font-allroundermonument text-3xl mb-4">
+                        <h2 class="font-asap text-3xl mb-4">
                             {{ $about->title }}
                         </h2>
                         {!! $about->text !!}
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="xs:mt-16 flex flex-col items-center">
-                <h2 class="text-3xl font-allroundermonument">
+                <h2 class="text-3xl font-asap">
                     Listen
                 </h2>
                 <x-spotify-embed></x-spotify-embed>
@@ -89,7 +89,7 @@
                 <x-contact></x-contact>
             </div>
             <div class="my-8 flex flex-col items-center">
-                <h2 class="text-3xl font-allroundermonument">
+                <h2 class="text-3xl font-asap">
                     Buy my music
                 </h2>
                 <div class="flex mt-4">

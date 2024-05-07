@@ -4,7 +4,7 @@
         {{ \Carbon\Carbon::now()->format('Y-m-d') < $album->publish_date ? 'grayscale' : '' }}"
         src="{{ asset($album->thumbnail) }}" alt="{{ asset($album->thumbnail) }}"/>
     <div class="absolute flex flex-col justify-center items-center w-full h-[calc(100vh-80px)]">
-        <div class="text-white font-allroundermonument text-center">
+        <div class="text-white font-asap text-center">
             <h2 class="lg:text-2xl md:text-xl text-lg">
                 {{ $album->author }}
             </h2>

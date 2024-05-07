@@ -36,7 +36,7 @@
                         @endif
                     </div>
                     <div class="md:w-6/12 mt-4 md:mt-0">
-                        <h2 class="text-center font-allroundermonument text-4xl">
+                        <h2 class="text-center font-asap text-4xl">
                             {{ $album->name }}
                         </h2>
                         <div class="mt-4">

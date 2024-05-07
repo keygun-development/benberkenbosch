@@ -5,7 +5,7 @@
                 <a class="inline-block" href="{{ route('welcome') }}">
                     <div class="flex items-center">
                         <img class="h-[80px] md:p-4 p-2" src="{{ asset('images/logo.png') }}"/>
-                        <h2 class="font-allroundermonument md:text-2xl text-lg">
+                        <h2 class="font-asap md:text-2xl text-lg">
                             Ben Berkenbosch
                         </h2>
                     </div>

@@ -9,7 +9,7 @@ module.exports = {
     extend: {
         fontFamily: {
             sans: ["Young", "sans-serif"],
-            allroundermonument: ["AllrounderMonument", "serif"]
+            asap: ["Asap", "serif"]
         },
         screens: {
             xs: "500px"
