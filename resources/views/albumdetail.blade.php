@@ -24,7 +24,12 @@
         </div>
     @endsection
     @section('content')
-        <div class="container mx-auto px-4 my-8">
+        <div class="container mx-auto px-4 mb-8">
+            @if($album->embed_link)
+                <div class="flex justify-center mb-12">
+                    <iframe allow="autoplay ; encrypted-media; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="{{ $album->embed_link }}"></iframe>
+                </div>
+            @endif
             <div class="flex justify-center w-full">
                 <div class="flex flex-col md:flex-row md:justify-between md:w-10/12 w-full">
                     <div class="md:w-5/12 w-full">

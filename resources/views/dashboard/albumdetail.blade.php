@@ -55,6 +55,12 @@
                 </div>
                 <div>
                     <p class="text-lg font-bold">
+                        Embed link:
+                    </p>
+                    <input type="text" name="embed_link" class="c-form__input" value="{{ $album->embed_link }}"/>
+                </div>
+                <div>
+                    <p class="text-lg font-bold">
                         Release Datum:
                     </p>
                     <input type="date" name="date" value="{{ $album->publish_date }}" class="c-form__input"/>
