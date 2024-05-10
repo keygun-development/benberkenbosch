@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -64,4 +65,12 @@ Route::middleware('auth')->prefix('dashboard')->group(function(): void {
     Route::post('/album/delete', [AlbumController::class, 'delete'])->name('album.delete');
     Route::post('/album/save', [AlbumController::class, 'save'])->name('album.save');
     Route::post('/album/create', [AlbumController::class, 'create'])->name('album.create');
+
+    Route::get('artists', [ArtistController::class, 'dashboard'])->name('dashboard.artists');
+    Route::get('artists/newartist', [ArtistController::class, 'newArtist'])->name('dashboard.artistnew');
+    Route::get('artists/{id}', [ArtistController::class, 'detail'])->name('dashboard.artistdetail');
+
+    Route::post('/artist/delete', [ArtistController::class, 'delete'])->name('artist.delete');
+    Route::post('/artist/save', [ArtistController::class, 'save'])->name('artist.save');
+    Route::post('/artist/create', [ArtistController::class, 'create'])->name('artist.create');
 });
