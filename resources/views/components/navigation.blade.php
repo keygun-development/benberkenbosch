@@ -25,7 +25,7 @@
     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
         {{ __('About') }}
     </x-nav-link>
-    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+    <a href="mailto:info.benberkenbosch@gmail.com">
         {{ __('Contact') }}
-    </x-nav-link>
+    </a>
 </ul>
