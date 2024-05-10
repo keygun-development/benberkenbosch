@@ -41,6 +41,14 @@
                     About me
                 </p>
             </a>
+            <a class="duration-300 hover:text-white text-lg font-semibold flex items-center
+            {{ request()->routeIs('dashboard.artists') ? 'text-white' : 'text-gray-400'}}"
+               href="/dashboard/artists">
+                <i class="fa-solid fa-user mr-2"></i>
+                <p class="hidden lg:block">
+                    Artists
+                </p>
+            </a>
         </div>
     </div>
 </div>

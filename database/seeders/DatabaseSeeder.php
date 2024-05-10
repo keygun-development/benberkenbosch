@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ContentHomeSeeder::class,
             FloatingImageSeeder::class,
-            AboutSeeder::class
+            AboutSeeder::class,
+            ArtistSeeder::class,
         ]);
     }
 }
