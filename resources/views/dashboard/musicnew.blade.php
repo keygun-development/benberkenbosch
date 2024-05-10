@@ -18,17 +18,26 @@
         </div>
         <form enctype="multipart/form-data" class="mt-4" method="POST" action="/dashboard/music/create">
             @csrf
-            <div class="md:w-5/12">
-                <p class="text-lg font-bold mt-4">
-                    Iframe:
-                </p>
-                <input class="c-form__input" type="text" name="embed" />
-            </div>
-            <div class="mt-4">
+            <div>
                 <p class="text-lg font-bold">
                     Titel:
                 </p>
                 <input name="title" class="c-form__input" type="text" />
+            </div>
+            <div class="md:w-5/12 mt-4">
+                <p class="text-lg font-bold mt-4">
+                    Thumbnail:
+                </p>
+                <input class="mt-4" type="file" name="image" accept=".jpg,.jpeg,.png,.webp,.jfif"/>
+            </div>
+            <div class="mt-4">
+                <p class="text-lg font-bold">
+                    Link:
+                </p>
+                <input name="link" class="c-form__input" type="text" />
+                <p class="text-gray-300 text-sm">
+                    Waar moet de link naartoe verwijzen?
+                </p>
             </div>
             <div class="mt-4">
                 <input type="submit" class="c-button__black c-button cursor-pointer" value="Opslaan"/>

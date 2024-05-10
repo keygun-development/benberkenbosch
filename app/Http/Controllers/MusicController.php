@@ -46,8 +46,9 @@ class MusicController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'embed' => 'required',
+            'thumbnail' => 'max:2048',
             'title' => 'required',
+            'link' => 'required',
         ]);
         $music = Music::where('id', $request->id)->first();
         $this->extracted($request, $music);
@@ -57,8 +58,9 @@ class MusicController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'embed' => 'required',
+            'thumbnail' => 'required',
             'title' => 'required',
+            'link' => 'required',
         ]);
         $music = new Music();
         $this->extracted($request, $music);
@@ -72,8 +74,11 @@ class MusicController extends Controller
      */
     public function extracted(Request $request, Music $music): void
     {
-        $music->embed = $request->embed;
+        if ($request->thumbnail) {
+            $music->thumbnail = (new ImageUploadController)->uploadImg($request->thumbnail);
+        }
         $music->title = $request->title;
+        $music->link = $request->link;
         $music->save();
     }
 }
