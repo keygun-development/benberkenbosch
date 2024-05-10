@@ -47,6 +47,12 @@
                 </div>
                 <div>
                     <p class="text-lg font-bold">
+                        Embed link:
+                    </p>
+                    <input type="text" name="embed_link" class="c-form__input"/>
+                </div>
+                <div>
+                    <p class="text-lg font-bold">
                         Release Datum:
                     </p>
                     <input type="date" name="date" class="c-form__input"/>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('author');
             $table->date('publish_date');
             $table->string('thumbnail');
+            $table->string('embed_link');
             $table->string('cover');
             $table->longText('description');
             $table->string('artwork');

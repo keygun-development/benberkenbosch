@@ -126,6 +126,7 @@ class AlbumController extends Controller
         $album->author = $request->author ?? '';
         $album->publish_date = $request->date;
         $album->artwork = $request->thumbnail_art ?? '';
+        $album->embed_link = $request->embed_link ?? '';
         $album->cover_art = $request->cover_art ?? '';
         $album->description = $request->text ?? '';
         $album->buttontext = $request->buttontext ?? '';
