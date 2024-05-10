@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('music', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('embed');
+            $table->string('thumbnail');
+            $table->string('link');
             $table->timestamps();
         });
     }
