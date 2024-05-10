@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Artist extends Model
+class Artistmusic extends Model
 {
     use HasFactory;
 
-    public function musics() {
-        return $this->belongsToMany(Music::class, 'artist_music');
-    }
+    protected $table = 'artist_music';
 }
