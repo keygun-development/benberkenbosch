@@ -27,7 +27,10 @@
         <div class="container mx-auto px-4 mb-8">
             @if($album->embed_link)
                 <div class="flex justify-center mb-12">
-                    <iframe allow="autoplay ; encrypted-media; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="{{ $album->embed_link }}"></iframe>
+                    <iframe allow="autoplay ; encrypted-media; fullscreen *; clipboard-write" frameborder="0"
+                            height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                            src="{{ $album->embed_link }}"></iframe>
                 </div>
             @endif
             <div class="flex justify-center w-full">
@@ -53,3 +56,26 @@
         </div>
     @endsection
 </x-app-layout>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "MusicAlbum",
+    "name": "{{ $album->name }}",
+    "byArtist": "Ben Berkenbosch",
+    "image": "{{ asset($album->cover) }}",
+    "datePublished": "{{ $album->publish_date }}",
+    "description": "{!! $album->description !!}",
+    "numTracks": "{{ $album->musics()->count() }}",
+    "track": [
+    @foreach($album->musics()->get() as $song)
+        {
+            "@type": "MusicRecording",
+            "byArtist": "Ben Berkenbosch",
+            "name": "{{ $song->title }}",
+            "url": "{{ $song->link }}",
+            "inAlbum": "{{ $album->name }}"
+        },
+    @endforeach
+    ]
+}
+</script>
