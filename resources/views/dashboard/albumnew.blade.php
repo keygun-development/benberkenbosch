@@ -84,7 +84,7 @@
                     <input type="text" name="buttonlink" class="c-form__input"/>
                 </div>
             </div>
-            <div class="flex items-center flex-col md:flex-row mt-4 gap-4 max-w-full flex-wrap">
+            <div class="flex md:items-center flex-col md:flex-row mt-4 gap-4 max-w-full flex-wrap">
                 <album-link
                     ref="albumref"
                 >
@@ -92,7 +92,7 @@
                         <div class="inline-block">
                             <input type="hidden" name="repeats" :value="slotprops.repeats" />
                             <div @click="this.$refs['albumref'].repeat++"
-                                 class="rounded-full p-4 bg-black cursor-pointer hover:bg-white hover:text-black text-white duration-300">
+                                 class="rounded-full p-4 bg-black cursor-pointer hover:bg-white hover:text-black text-white duration-300 max-w-[50px] max-h-[50px] flex justify-center items-center">
                                 <i class="fa-solid fa-plus fa-2x"></i>
                             </div>
                         </div>

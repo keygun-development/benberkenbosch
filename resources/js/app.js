@@ -8,6 +8,7 @@ import MenuDisclosure from "./components/MenuDisclosure.vue";
 import Editor from "./components/Editor.vue";
 import Popup from "./components/Popup.vue";
 import AlbumLink from "./components/AlbumLink.vue";
+import AlbumMusic from "./components/AlbumMusic.vue";
 import ImagesSlide from "./components/ImagesSlide.vue";
 import './font-awesome.js';
 
@@ -21,5 +22,6 @@ createApp({})
     .component('Editor', Editor)
     .component('Popup', Popup)
     .component('AlbumLink', AlbumLink)
+    .component('AlbumMusic', AlbumMusic)
     .component('ImagesSlide', ImagesSlide)
     .mount('#app')

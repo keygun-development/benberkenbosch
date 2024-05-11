@@ -57,10 +57,10 @@
     @endsection
 </x-app-layout>
 <script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "MusicAlbum",
-    "name": "{{ $album->name }}",
+    {
+        "@context": "http://schema.org",
+        "@type": "MusicAlbum",
+        "name": "{{ $album->name }}",
     "byArtist": {
         "@type": "MusicGroup",
         "name": "Ben Berkenbosch"
@@ -75,7 +75,9 @@
             "@type": "MusicRecording",
             "name": "{{ $song->title }}",
             "url": "{{ $song->link }}",
-        }@if(!$loop->last),@endif
+        }@if(!$loop->last)
+            ,
+        @endif
     @endforeach
     ]
 }

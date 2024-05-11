@@ -39,6 +39,20 @@
                     Waar moet de link naartoe verwijzen?
                 </p>
             </div>
+            <album-music
+                ref="albummusicref"
+                albums="{{ \App\Models\Album::all() }}"
+            >
+                <template #add="slotprops">
+                    <div class="inline-block">
+                        <input type="hidden" name="repeats" :value="slotprops.repeats" />
+                        <div @click="this.$refs['albummusicref'].repeat++"
+                             class="rounded-full p-4 bg-black cursor-pointer hover:bg-white hover:text-black text-white duration-300 max-w-[50px] max-h-[50px] flex justify-center items-center">
+                            <i class="fa-solid fa-plus fa-2x"></i>
+                        </div>
+                    </div>
+                </template>
+            </album-music>
             <div class="mt-4">
                 <input type="submit" class="c-button__black c-button cursor-pointer" value="Opslaan"/>
             </div>
