@@ -13,4 +13,9 @@ class Album extends Model
     {
         return $this->hasMany(AlbumMeta::class);
     }
+
+    public function musics()
+    {
+        return $this->belongsToMany(Music::class, 'album_music');
+    }
 }
