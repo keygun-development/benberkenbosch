@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             FloatingImageSeeder::class,
             AboutSeeder::class,
             ArtistMusicSeeder::class,
+            AlbumMusicSeeder::class,
         ]);
     }
 }

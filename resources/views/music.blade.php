@@ -18,9 +18,19 @@
                                 <p class="text-2xl uppercase font-bold">
                                     {{ $music->title }}
                                 </p>
-                                <p class="text-xl">
-                                    Ben Berkenbosch
-                                </p>
+                                @php
+                                    $benExists = $music->artists()->where('name', 'Ben Berkenbosch')->exists();
+                                @endphp
+                                @if($benExists)
+                                    <p class="text-xl">
+                                        Ben Berkenbosch
+                                    </p>
+                                @endif
+                                @foreach($music->artists()->where('name', '!=', 'Ben Berkenbosch')->limit($benExists ? 2 : 3)->get() as $artist)
+                                    <p class="text-xl">
+                                        {{ $artist->name }}
+                                    </p>
+                                @endforeach
                             </div>
                         </div>
                     </div>
