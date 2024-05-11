@@ -61,7 +61,10 @@
     "@context": "http://schema.org",
     "@type": "MusicAlbum",
     "name": "{{ $album->name }}",
-    "byArtist": "Ben Berkenbosch",
+    "byArtist": {
+        "@type": "MusicGroup",
+        "name": "Ben Berkenbosch"
+    },
     "image": "{{ asset($album->cover) }}",
     "datePublished": "{{ $album->publish_date }}",
     "description": "{!! $album->description !!}",
@@ -70,11 +73,9 @@
     @foreach($album->musics()->get() as $song)
         {
             "@type": "MusicRecording",
-            "byArtist": "Ben Berkenbosch",
             "name": "{{ $song->title }}",
             "url": "{{ $song->link }}",
-            "inAlbum": "{{ $album->name }}"
-        },
+        }@if(!$loop->last),@endif
     @endforeach
     ]
 }
