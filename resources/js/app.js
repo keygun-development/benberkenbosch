@@ -1,5 +1,6 @@
 import './bootstrap';
 import "vanilla-cookieconsent/dist/cookieconsent.css";
+import "quill/dist/quill.core.css";
 import "./cookie-consent.config.js"
 import {createApp} from "vue/dist/vue.esm-bundler";
 import dropdown from "./components/dropdown.vue"
