@@ -23,7 +23,7 @@
         "rellax": "^1.12.1",
         "sass": "^1.77.4",
         "sass-loader": "^14.2.1",
-        "tailwindcss": "^3.4.3",
+        "tailwindcss": "^3.4.4",
         "vanilla-cookieconsent": "^3.0.1",
         "vue": "^3.4.27",
         "vue-draggable-next": "^2.2.1"
