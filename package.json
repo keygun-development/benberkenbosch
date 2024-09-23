@@ -25,7 +25,7 @@
         "sass-loader": "^16.0.1",
         "tailwindcss": "^3.4.11",
         "vanilla-cookieconsent": "^3.0.1",
-        "vue": "^3.5.6",
+        "vue": "^3.5.8",
         "vue-draggable-next": "^2.2.1"
     }
 }
