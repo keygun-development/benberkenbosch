@@ -17,6 +17,11 @@ class MusicController extends Controller
         ]);
     }
 
+    public function getMusic()
+    {
+        return response()->json(Music::with(['artists'])->latest('created_at')->get());
+    }
+
     public function dashboard()
     {
         return view('dashboard.music', [

@@ -35,4 +35,10 @@ class AboutController extends Controller
 
         return redirect()->back();
     }
+
+    public function getAbout()
+    {
+        // return a json response
+        return response()->json(About::first());
+    }
 }

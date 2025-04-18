@@ -21,6 +21,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function getHome()
+    {
+        return response()->json([
+            'album' => Album::latest()->first(),
+            'about' => ContentHome::first(),
+            'images' => FloatingImage::all(),
+        ]);
+    }
+
     public function dashboard()
     {
         return view('dashboard.home', [

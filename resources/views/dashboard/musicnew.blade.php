@@ -28,7 +28,7 @@
                 <p class="text-lg font-bold mt-4">
                     Thumbnail:
                 </p>
-                <input class="mt-4" type="file" name="image" accept=".jpg,.jpeg,.png,.webp,.jfif"/>
+                <input class="mt-4" type="file" name="thumbnail" accept=".jpg,.jpeg,.png,.webp,.jfif"/>
             </div>
             <div class="mt-4">
                 <p class="text-lg font-bold">

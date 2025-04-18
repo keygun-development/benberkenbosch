@@ -18,6 +18,19 @@ class AlbumController extends Controller
         ]);
     }
 
+    public function getAlbums()
+    {
+        return response()->json(Album::latest('created_at')->get());
+    }
+
+    public function getAlbum($id)
+    {
+        return response()->json(Album::with([
+            'albumMetas',
+            'musics'
+        ])->findOrFail($id));
+    }
+
     public function newPage(): Factory|View|Application
     {
         return view('dashboard.albumnew');
